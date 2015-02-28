@@ -6,8 +6,7 @@ PRIVMSG.prototype.msg = function msg(message) {
   var filter = new RegExp('^'+this.igelkott.config.trigger+'([^ ]*)');
   var trigger = message.parameters[1].match(filter);
 
-  if (trigger)
-  {
+  if (trigger) {
     this.igelkott.emit('trigger:'+trigger[1], message);
   }
 };
